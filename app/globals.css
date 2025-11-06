@@ -1,13 +1,37 @@
 @import "tailwindcss";
 
 :root {
+  /* BGs */
   --background: #222831;
   --foreground: #171717;
 
+  /* Colors */
   --dark-blue: #222831;
   --gray: #393E46;
   --cian: #00ADB5;
   --light-white: #EEEEEE;
+
+  /* Fonts Sizes */
+  /* BOLD */
+  --poppins-bold-thumb-120: 600 120px/180px 'Poppins', sans-serif;
+  --poppins-bold-thumb-55: 600 55px/82px 'Poppins', sans-serif;
+  --poppins-bold-title-desktop-64: 600 64px/96px 'Poppins', sans-serif;
+  --poppins-bold-title-mobile-38: 600 38px/57px 'Poppins', sans-serif;
+
+  --poppins-bold-h1-38: 600 38px/57px 'Poppins', sans-serif;
+  --poppins-bold-h2-28: 600 28px/42px 'Poppins', sans-serif;
+  --poppins-bold-h3-21: 600 21px/31px 'Poppins', sans-serif;
+  --poppins-bold-h4-16: 600 16px/24px 'Poppins', sans-serif;
+  --poppins-boldp-12: 600 12px/18px 'Poppins', sans-serif;
+  --poppins-bold-s-8: 600 8px/12px 'Poppins', sans-serif;
+
+  /* Regular */
+  --poppins-regular-h1-38: 400 38px/57px 'Poppins', sans-serif;
+  --poppins-regular-h2-28: 400 28px/42px 'Poppins', sans-serif;
+  --poppins-regular-h3-21: 400 21px/31px 'Poppins', sans-serif;
+  --poppins-regular-h4-16: 400 16px/24px 'Poppins', sans-serif;
+  --poppins-regular-p-12: 400 12px/18px 'Poppins', sans-serif;
+  --poppins-regular-s-8: 400 8px/12px 'Poppins', sans-serif;
 }
 
 @theme {
@@ -21,6 +45,25 @@
   --font-poppins: "Poppins", sans-serif;
 }
 
+/* ======= Custom Utility Classes ======= */
+.font-b-thumb-120 { font: var(--poppins-bold-thumb-120); }
+.font-b-thumb-55 { font: var(--poppins-bold-thumb-55); }
+.font-b-title-desktop-64 { font: var(--poppins-bold-title-desktop-64); }
+.font-b-title-mobile-38 { font: var(--poppins-bold-title-mobile-38); }
+.font-b-h1-38 { font: var(--poppins-bold-h1-38); }
+.font-b-h2-28 { font: var(--poppins-bold-h2-28); }
+.font-b-h3-21 { font: var(--poppins-bold-h3-21); }
+.font-b-h4-16 { font: var(--poppins-bold-h4-16); }
+.font-b-p-12 { font: var(--poppins-bold-p-12); }
+.font-b-s-8 { font: var(--poppins-bold-s-8); }
+
+.font-r-h1-38 { font: var(--poppins-regular-h1-38); }
+.font-r-h2-28 { font: var(--poppins-regular-h2-28); }
+.font-r-h3-21 { font: var(--poppins-regular-h3-21); }
+.font-r-h4-16 { font: var(--poppins-regular-h4-16); }
+.font-r-p-12 { font: var(--poppins-regular-p-12); }
+.font-r-s-8 { font: var(--poppins-regular-s-8); }
+
 @media (prefers-color-scheme: light) {
   :root {
     --background: #EEEEEE;
@@ -28,8 +71,7 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
+* {
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }

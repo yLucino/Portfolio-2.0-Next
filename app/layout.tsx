@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import Header from "../components/header";
 
 const poppinsSans = Poppins({
   weight: ['100' , '200' , '300' , '400' , '500' , '600' , '700' , '800' , '900'],
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body
         className={`${poppinsSans.className} antialiased`}
       >
+        <Header></Header>
         {children}
       </body>
     </html>
