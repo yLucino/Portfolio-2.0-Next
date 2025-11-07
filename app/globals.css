@@ -26,12 +26,12 @@
   --poppins-bold-s-8: 600 8px/12px 'Poppins', sans-serif;
 
   /* Regular */
-  --poppins-regular-h1-38: 400 38px/57px 'Poppins', sans-serif;
-  --poppins-regular-h2-28: 400 28px/42px 'Poppins', sans-serif;
-  --poppins-regular-h3-21: 400 21px/31px 'Poppins', sans-serif;
-  --poppins-regular-h4-16: 400 16px/24px 'Poppins', sans-serif;
-  --poppins-regular-p-12: 400 12px/18px 'Poppins', sans-serif;
-  --poppins-regular-s-8: 400 8px/12px 'Poppins', sans-serif;
+  --poppins-regular-h1-38: 300 38px/57px 'Poppins', sans-serif;
+  --poppins-regular-h2-28: 300 28px/42px 'Poppins', sans-serif;
+  --poppins-regular-h3-21: 300 21px/31px 'Poppins', sans-serif;
+  --poppins-regular-h4-16: 300 16px/24px 'Poppins', sans-serif;
+  --poppins-regular-p-12: 300 12px/18px 'Poppins', sans-serif;
+  --poppins-regular-s-8: 300 8px/12px 'Poppins', sans-serif;
 }
 
 @theme {
@@ -97,4 +97,8 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--cian);
+}
+
+span {
+  color: var(--cian);
 }
