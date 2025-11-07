@@ -74,4 +74,27 @@
 * {
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray) var(--dark-blue);
+}
+
+/* ======= Custom Scrollbar Styles ======= */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-blue);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray);
+  border-radius: 10px;
+  border: 2px solid var(--dark-blue);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cian);
 }

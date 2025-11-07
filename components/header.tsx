@@ -76,7 +76,7 @@ export default function Header() {
   }
 
   return (
-    <header className="w-full fixed flex justify-between items-center py-7 px-32 bg-blue-drak border-b-2 border-gray">
+    <header className="w-full fixed flex justify-between items-center py-7 px-32 bg-blue-drak border-b-2 border-gray bg-dark-blue z-50">
       <div className="flex items-center gap-2">
         <Image className="w-16" src={logo} alt="Logo YL" />
         <h1 className="text-light-white font-b-h2-28">yLucino</h1>
