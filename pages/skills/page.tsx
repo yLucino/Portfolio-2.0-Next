@@ -110,7 +110,7 @@ export default function Skills() {
           speed: 300,
           glare: true,
           "max-glare": 0.3,
-          scale: 1.1,
+          scale: 1.05,
         });
       }
     });
@@ -118,7 +118,7 @@ export default function Skills() {
 
   return (
     <section id="skills" className="flex flex-col justify-center items-center w-full h-screen bg-dark-blue pt-32 px-32">
-      <div className="flex items-center justify-between mb-[84px] w-full">
+      <div className="flex items-center justify-between mb-[64px] w-[1060px]">
         <h1 className="text-light-white font-b-title-desktop-64 ">Minhas <span>habilidades</span></h1>
         <button className="bg-gray font-b-h4-16 text-cian rounded-full w-[121px] h-[46px] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-gray">
           <Link href={'https://www.linkedin.com/in/luciano-chiodini-6a35092b3/details/education'} target="_blank">
