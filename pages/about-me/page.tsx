@@ -12,7 +12,7 @@ export default function AboutMe() {
       <div className="-mt-16">
         <h1 className="text-light-white font-b-title-desktop-64">Sobre <span>mim</span></h1>
 
-        <p className="max-w-[336px] text-light-white font-r-p-12 !leading-6 my-10">
+        <p className="max-w-[560px] min-w-[336px] text-light-white font-r-p-12 !leading-6 my-10">
           Me chamo <span>Luciano Chiodini</span>. Tenho 19 anos e sou nascido e residente em Blumenau, Santa Catarina, Brasil.
           <br /><br />
           Sou uma pessoa <span>comprometida e dedicada</span>, sempre em busca de novas informações e tecnologias.
