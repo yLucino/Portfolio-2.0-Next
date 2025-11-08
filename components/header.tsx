@@ -2,11 +2,13 @@
 
 import Image from "next/image";
 import logo from "../assets/logo5x.png";
-
 import Link from "next/link";
 import { useEffect, useState, useRef, useMemo } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
+
   interface NavLink {
     name: string;
     href: string;
@@ -20,6 +22,8 @@ export default function Header() {
     { name: 'Projetos', href: '#projects', focus: false },
     { name: 'Contato', href: '#contact', focus: false }
   ]), []);
+
+  const navLink: NavLink = { name: 'Voltar', href: '/', focus: true };
 
   const [currentLink, setCurrentLink] = useState<NavLink | null>(navLinks[0]);
 
@@ -84,13 +88,21 @@ export default function Header() {
 
       <nav>
         <ul className="flex items-center gap-10 font-r-h4-16 ">
-          {navLinks.map((link) => (
-            <li key={link.name} className={currentLink?.name === link.name ? 'text-cian' : 'text-light-white hover:text-cian transition-all duration-300'}  onClick={() => handleClick(link)} >
-              <Link href={link.href} >
-                {link.name}
+          {pathname === '/certifications' || pathname?.split('/')[1] === 'project-details' ? (
+            <li key={navLink.name} className={currentLink?.name === navLink.name ? 'text-cian' : 'text-light-white hover:text-cian transition-all duration-300'} onClick={() => handleClick(navLink)}>
+              <Link href={navLink.href}>
+                {navLink.name}
               </Link>
             </li>
-          ))}
+          ) : (
+            navLinks.map((link) => (
+              <li key={link.name} className={currentLink?.name === link.name ? 'text-cian' : 'text-light-white hover:text-cian transition-all duration-300'} onClick={() => handleClick(link)}>
+                <Link href={link.href}>
+                  {link.name}
+                </Link>
+              </li>
+            ))
+          )}
         </ul>
       </nav>
     </header>
