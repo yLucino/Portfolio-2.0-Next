@@ -124,7 +124,7 @@ export default function Projects() {
       <div className="flex w-full justify-center items-center">
         <ul className="flex gap-6">
 
-          <li className="bg-gray w-[380px] h-[280px] rounded-4xl">
+          <li className="bg-gray w-[380px] h-[280px] rounded-4xl hover:scale-105 transition-all duration-300">
             <Link className="flex h-full flex-col justify-evenly items-center" href={'/project-details/1'}>
               <div className="flex items-center gap-1.5 text-light-white">
                 <p className="flex items-center justify-center font-b-h4-16 bg-cian w-[105px] h-[26px] rounded-full">Projeto 01</p>
@@ -137,7 +137,7 @@ export default function Projects() {
               </div>
             </Link>
           </li>
-          <li className="bg-gray w-[380px] h-[280px] rounded-4xl">
+          <li className="bg-gray w-[380px] h-[280px] rounded-4xl hover:scale-105 transition-all duration-300">
             <Link className="flex h-full flex-col justify-evenly items-center" href={'/project-details/1'}>
               <div className="flex items-center gap-1.5 text-light-white">
                 <p className="flex items-center justify-center font-b-h4-16 bg-cian w-[105px] h-[26px] rounded-full">Projeto 01</p>
@@ -145,12 +145,12 @@ export default function Projects() {
               </div>
 
               <div className="flex justify-center items-center bg-dark-blue w-[340px] h-[200px] rounded-2xl relative">
-                <Image src={iconCSharp} alt="" />
-                <p className="absolute left-3 bottom-3 flex justify-center items-center size-7 rounded-full bg-cian font-b-s-8 text-light-white" title="Project developed in: C#">C#</p>
+                <Image src={iconJs} alt="" />
+                <p className="absolute left-3 bottom-3 flex justify-center items-center size-7 rounded-full bg-cian font-b-s-8 text-light-white" title="Project developed in: JS">JS</p>
               </div>
             </Link>
           </li>
-          <li className="bg-gray w-[380px] h-[280px] rounded-4xl">
+          <li className="bg-gray w-[380px] h-[280px] rounded-4xl hover:scale-105 transition-all duration-300">
             <Link className="flex h-full flex-col justify-evenly items-center" href={'/project-details/1'}>
               <div className="flex items-center gap-1.5 text-light-white">
                 <p className="flex items-center justify-center font-b-h4-16 bg-cian w-[105px] h-[26px] rounded-full">Projeto 01</p>
@@ -158,8 +158,8 @@ export default function Projects() {
               </div>
 
               <div className="flex justify-center items-center bg-dark-blue w-[340px] h-[200px] rounded-2xl relative">
-                <Image src={iconCSharp} alt="" />
-                <p className="absolute left-3 bottom-3 flex justify-center items-center size-7 rounded-full bg-cian font-b-s-8 text-light-white" title="Project developed in: C#">C#</p>
+                <Image src={iconTs} alt="" />
+                <p className="absolute left-3 bottom-3 flex justify-center items-center size-7 rounded-full bg-cian font-b-s-8 text-light-white" title="Project developed in: TS">TS</p>
               </div>
             </Link>
           </li>
@@ -170,7 +170,7 @@ export default function Projects() {
       <div className="flex justify-center w-full gap-10">
         <Image src={bg_ArrowLeft} alt="" />
 
-        <Link className="flex items-center justify-center gap-4 bg-cian rounded-full text-light-white font-b-h4-16 w-[207px] h-[43px]" href={'https://github.com/yLucino?tab=repositories'} target="_blank">
+        <Link className="flex items-center justify-center gap-4 bg-cian rounded-full text-light-white font-b-h4-16 w-[207px] h-[43px] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-cian" href={'https://github.com/yLucino?tab=repositories'} target="_blank">
           Ver todos
           <Image src={iconGithub} alt="" />
         </Link>

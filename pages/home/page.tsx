@@ -14,15 +14,15 @@ export default function Home() {
         <h1 className="text-cian font-b-thumb-120 uppercase max-w-[810] !leading-28 py-4 -ml-1.5">Full - Stack Developer</h1>
 
         <div className="flex gap-6">
-          <button className="flex items-center justify-center text-light-white font-b-h4-16 gap-2 rounded-4xl bg-cian w-[207px] h-[43px] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-cian">
+          <Link href={'https://www.linkedin.com/in/luciano-chiodini-6a35092b3'} target="_blank" className="flex items-center justify-center text-light-white font-b-h4-16 gap-2 rounded-4xl bg-cian w-[207px] h-[43px] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-cian">
             Contrate-me
             <Image src={iconUser} alt="" />
-          </button>
+          </Link>
 
-          <button className="flex items-center justify-center text-light-white font-b-h4-16 gap-3 rounded-4xl bg-gray w-[207px] h-[43px] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-gray">
-            Donwload CV
+          <Link href={'/curriculo-luciano-chiodini.pdf'} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center text-light-white font-b-h4-16 gap-3 rounded-4xl bg-gray w-[207px] h-[43px] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-gray">
+            Download CV
             <Image src={iconDownlaod} alt="" />
-          </button>
+          </Link>
         </div>
       </div>
 

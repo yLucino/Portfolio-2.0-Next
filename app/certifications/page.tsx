@@ -57,7 +57,7 @@ export default function Certifications() {
     },
   ]
 
-  const certifications: Certificate[] = [
+  const certificationsData: Certificate[] = [
     {
       title: 'Entra 21  |  19ª Edição  |  ProWay  |  C#  |  Angular',
       tagType: 'Full Stack',
@@ -96,22 +96,19 @@ export default function Certifications() {
     },
   ] 
 
+  const [certifications, setCertifications] = useState<Certificate[]>(certificationsData);
   const [currentBtn, setCurrentBtn] = useState<Filter>(filters[0]);
   const [zoomedImage, setZoomedImage] = useState<StaticImageData | null>(null);
 
   const hendlerClick = (btn: Filter) => {
-    let selected: Filter = filters[0]; 
+    setCurrentBtn(btn);
 
-    filters.forEach(item => {
-      if (item.text === btn.text) {
-        item.focus = true;
-        selected = item;
-      } else {
-        item.focus = false;
-      }
-    })
-
-    setCurrentBtn(selected);
+    if (btn.text === 'Todos') {
+      setCertifications(certificationsData);
+    } else {
+      const filteredArray = certificationsData.filter(cert => cert.tagType === btn.text);
+      setCertifications(filteredArray);
+    }
   }
 
   const openZoom = (img: StaticImageData) => {
@@ -160,11 +157,11 @@ export default function Certifications() {
       </div>
 
       <div className="flex">
-        <div className="h-[1480px] w-1.5 rounded-full bg-cian"></div>
+        <div className="h-auto w-1.5 rounded-full bg-cian"></div>
 
         <ul>
           {certifications.map(cert => (
-            <li key={cert.title} className="flex gap-5 -ml-[30px] mt-28">
+            <li key={cert.title} className="flex gap-5 -ml-[30px] mt-28 last:mb-50">
               <div className="flex flex-col items-center gap-[22px]">
                 <Image src={bigInfo} alt=""/>
                 <Image src={smallInfo} alt=""/>
@@ -179,12 +176,12 @@ export default function Certifications() {
               </div>
 
               <div className="flex gap-5">
-                <div className="w-[215px] h-[108px] rounded-[20px] bg-gray flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => openZoom(cert.img_1)}>
+                <div className="w-[215px] h-[108px] rounded-[20px] bg-gray flex items-center justify-center cursor-pointer hover:opacity-65 transition-opacity" onClick={() => openZoom(cert.img_1)}>
                   <Image className="w-[190px] h-[80px] border-4 border-cian rounded-[10px]" src={cert.img_1} alt={"Imagem 1 do certificado de " + cert.tagType} />
                 </div>
 
                 {cert.img_2 ? (
-                  <div className="w-[215px] h-[108px] rounded-[20px] bg-gray flex items-center justify-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => openZoom(cert.img_2!)}>
+                  <div className="w-[215px] h-[108px] rounded-[20px] bg-gray flex items-center justify-center cursor-pointer hover:opacity-65 transition-opacity" onClick={() => openZoom(cert.img_2!)}>
                     <Image className="w-[190px] h-[80px] border-4 border-cian rounded-[10px]" src={cert.img_2} alt={"Imagem 2 do certificado de " + cert.tagType} />
                   </div>
                 ) : ('')}

@@ -20,7 +20,8 @@ export default function Header() {
     { name: 'Sobre mim', href: '#about-me', focus: false },
     { name: 'Habilidades', href: '#skills', focus: false },
     { name: 'Projetos', href: '#projects', focus: false },
-    { name: 'Contato', href: '#contact', focus: false }
+    { name: 'Contato', href: '#contact', focus: false },
+    { name: 'Certificados', href: '/certifications', focus: false }
   ]), []);
 
   const navLink: NavLink = { name: 'Voltar', href: '/', focus: true };
@@ -82,8 +83,9 @@ export default function Header() {
   return (
     <header className="w-full fixed flex justify-between items-center py-7 px-32 bg-blue-drak border-b-2 border-gray bg-dark-blue z-50">
       <div className="flex items-center gap-2">
-        <Image className="w-16" src={logo} alt="Logo YL" />
-        <h1 className="text-light-white font-b-h2-28">yLucino</h1>
+        <Link href={'/'}>
+          <Image className="w-16" src={logo} alt="Logo YL" />
+        </Link>
       </div>
 
       <nav>
@@ -97,7 +99,7 @@ export default function Header() {
           ) : (
             navLinks.map((link) => (
               <li key={link.name} className={currentLink?.name === link.name ? 'text-cian' : 'text-light-white hover:text-cian transition-all duration-300'} onClick={() => handleClick(link)}>
-                <Link href={link.href}>
+                <Link className={link.name === 'Certificados' ? 'bg-gray rounded-full px-4 py-1' : ''} href={link.href}>
                   {link.name}
                 </Link>
               </li>
