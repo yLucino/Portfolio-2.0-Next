@@ -8,6 +8,8 @@ import { usePathname } from "next/navigation";
 
 export default function Header() {
   const pathname = usePathname();
+  console.log(pathname);
+  
 
   interface NavLink {
     name: string;
@@ -24,7 +26,7 @@ export default function Header() {
     { name: 'Certificados', href: '/certifications', focus: false }
   ]), []);
 
-  const navLink: NavLink = { name: 'Voltar', href: '/', focus: true };
+  const navLink: NavLink = { name: 'Voltar', href: pathname === '/certifications'  ?  '/#about-me' : '/#projects', focus: true };
 
   const [currentLink, setCurrentLink] = useState<NavLink | null>(navLinks[0]);
 

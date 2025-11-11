@@ -11,6 +11,9 @@
   --cian: #00ADB5;
   --light-white: #EEEEEE;
 
+  /* Gradiente */
+  --gradient-blue: linear-gradient(90deg,#00adb5 0%, #005659 100%);
+
   /* Fonts Sizes */
   /* BOLD */
   --poppins-bold-thumb-120: 600 120px/180px 'Poppins', sans-serif;
@@ -23,6 +26,7 @@
   --poppins-bold-h3-21: 600 21px/31px 'Poppins', sans-serif;
   --poppins-bold-h4-16: 600 16px/24px 'Poppins', sans-serif;
   --poppins-boldp-12: 600 12px/18px 'Poppins', sans-serif;
+  --poppins-bold-s-10: 600 10px/14px 'Poppins', sans-serif;
   --poppins-bold-s-8: 600 8px/12px 'Poppins', sans-serif;
 
   /* Regular */
@@ -55,6 +59,7 @@
 .font-b-h3-21 { font: var(--poppins-bold-h3-21); }
 .font-b-h4-16 { font: var(--poppins-bold-h4-16); }
 .font-b-p-12 { font: var(--poppins-bold-p-12); }
+.font-b-s-10 { font: var(--poppins-bold-s-10); }
 .font-b-s-8 { font: var(--poppins-bold-s-8); }
 
 .font-r-h1-38 { font: var(--poppins-regular-h1-38); }
@@ -63,6 +68,8 @@
 .font-r-h4-16 { font: var(--poppins-regular-h4-16); }
 .font-r-p-12 { font: var(--poppins-regular-p-12); }
 .font-r-s-8 { font: var(--poppins-regular-s-8); }
+
+.bg-linear-gradient { background: var(--gradient-blue);}
 
 @media (prefers-color-scheme: light) {
   :root {
