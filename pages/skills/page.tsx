@@ -120,11 +120,7 @@ export default function Skills() {
     <section id="skills" className="flex flex-col justify-center items-center w-full h-screen bg-dark-blue pt-32 px-32">
       <div className="flex items-center justify-between mb-[64px] w-[1060px]">
         <h1 className="text-light-white font-b-title-desktop-64 ">Minhas <span>habilidades</span></h1>
-        <button className="bg-gray font-b-h4-16 text-cian rounded-full w-[121px] h-[46px] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-gray">
-          <Link href={'https://www.linkedin.com/in/luciano-chiodini-6a35092b3/details/education'} target="_blank">
-            Ver mais
-          </Link>
-        </button>
+        <Link href={'https://www.linkedin.com/in/luciano-chiodini-6a35092b3/details/education'} target="_blank" className="bg-gray flex justify-center items-center font-b-h4-16 text-cian rounded-full w-[121px] h-[46px] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-gray">Ver mais</Link>
       </div>
 
       <ul className="flex flex-wrap gap-5 w-[1060px]">

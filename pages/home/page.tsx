@@ -26,11 +26,9 @@ export default function Home() {
         </div>
       </div>
 
-      <button className="flex justify-center items-center bg-gray size-[66px] absolute bottom-20 left-96 cursor-pointer transition-all duration-300 hover:rounded-4xl hover:shadow-2xl shadow-gray">
-        <Link href={'#about-me'}>
-          <Image src={iconArrow} alt="" />
-        </Link>
-      </button>
+      <Link href={'#about-me'} className="flex justify-center items-center bg-gray size-[66px] absolute bottom-20 left-96 cursor-pointer transition-all duration-300 hover:rounded-4xl hover:shadow-2xl shadow-gray">
+        <Image src={iconArrow} alt="" />
+      </Link>
 
       <Image className="absolute bottom-20 right-32" src={bgEffect} alt="" />
     </section>

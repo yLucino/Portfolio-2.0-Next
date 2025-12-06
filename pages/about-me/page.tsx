@@ -22,15 +22,9 @@ export default function AboutMe() {
         </p>
 
         <div className="flex gap-3">
-          <button className="h-[43px] w-[218px] rounded-full bg-cian text-light-white font-b-h4-16 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-cian">
-            <Link href={'/certifications'}>Ver mais</Link>
-          </button>
-          <button className="size-[43px] rounded-full bg-gray flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-gray">
-            <Link href={'https://github.com/yLucino'} target="_blank"><Image src={iconGitHub} alt=""/></Link>
-          </button>
-          <button className="size-[43px] rounded-full bg-gray flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-gray">
-            <Link href={'https://www.instagram.com/luci_ano_chi'} target="_blank"><Image src={iconInstagram} alt=""/></Link>
-          </button>
+          <Link href={'/certifications'} className="h-[43px] w-[218px] flex justify-center items-center rounded-full bg-cian text-light-white font-b-h4-16 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-cian">Ver mais</Link>
+          <Link href={'https://github.com/yLucino'} target="_blank" className="size-[43px] rounded-full bg-gray flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-gray"><Image src={iconGitHub} alt=""/></Link>
+          <Link href={'https://www.instagram.com/luci_ano_chi'} target="_blank" className="size-[43px] rounded-full bg-gray flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-gray"><Image src={iconInstagram} alt=""/></Link>
         </div>
       </div>
 
