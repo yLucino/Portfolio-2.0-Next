@@ -143,46 +143,46 @@ export default function Certifications() {
   }, [zoomedImage]);
 
   return(
-    <section className="w-full min-h-screen flex flex-col justify-between bg-dark-blue pt-32 px-32 relative">
-      <div className="mb-28">
-        <h1 className="font-b-title-desktop-64 text-light-white">Minhas <span>Certificações</span></h1>
+    <section className="w-full min-h-screen flex flex-col justify-between bg-dark-blue pt-24 sm:pt-28 md:pt-32 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 relative overflow-hidden">
+      <div className="mb-10 md:mb-28">
+        <h1 className="font-b-title-mobile-38 md:font-b-title-desktop-64 text-light-white mb-6 md:mb-0">Minhas <span>Certificações</span></h1>
 
-        <ul className="flex gap-2.5">
+        <ul className="flex flex-wrap gap-2 sm:gap-2.5">
           {filters.map(btn => (
-            <li key={btn.text} className={currentBtn.text === btn.text ? 'font-b-h4-16 text-light-white bg-cian w-[132px] h-[43px] rounded-4xl cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-cian flex items-center justify-center' : 'font-b-h4-16 text-light-white bg-gray w-[132px] h-[43px] rounded-4xl cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-gray flex items-center justify-center'} onClick={() => hendlerClick(btn)}>
+            <li key={btn.text} className={currentBtn.text === btn.text ? 'font-b-s-10 sm:font-b-h4-16 text-light-white bg-cian min-w-[90px] sm:w-[132px] h-[36px] sm:h-[43px] rounded-4xl cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-cian flex items-center justify-center px-3' : 'font-b-s-10 sm:font-b-h4-16 text-light-white bg-gray min-w-[90px] sm:w-[132px] h-[36px] sm:h-[43px] rounded-4xl cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-gray flex items-center justify-center px-3'} onClick={() => hendlerClick(btn)}>
               {btn.text}
             </li>
           ))}
         </ul>
       </div>
 
-      <div className="flex">
-        <div className="h-auto w-1.5 rounded-full bg-cian"></div>
+      <div className="flex w-full">
+        <div className="hidden md:block h-auto w-1.5 rounded-full bg-cian shrink-0"></div>
 
-        <ul>
+        <ul className="w-full">
           {certifications.map(cert => (
-            <li key={cert.title} className="flex gap-5 -ml-[30px] mt-28 last:mb-50">
-              <div className="flex flex-col items-center gap-[22px]">
+            <li key={cert.title} className="flex flex-col md:flex-row gap-4 md:gap-5 md:-ml-[30px] mt-10 md:mt-28 last:mb-16 md:last:mb-50">
+              <div className="hidden md:flex flex-col items-center gap-[22px] shrink-0">
                 <Image src={bigInfo} alt=""/>
                 <Image src={smallInfo} alt=""/>
               </div>
 
-              <div className="w-[495px] flex flex-col justify-evenly">
-                <p className="font-b-h3-21 text-light-white">{cert.title}</p>
+              <div className="w-full md:w-[495px] flex flex-col justify-evenly gap-3 md:gap-0">
+                <p className="font-b-h3-21 text-light-white text-sm sm:text-base">{cert.title}</p>
 
-                <p className="bg-gray rounded-full font-b-s-8 text-cian w-[100px] h-[15px] flex items-center justify-center">{cert.tagType}</p>
+                <p className="bg-gray rounded-full font-b-s-8 text-cian w-fit min-w-[100px] h-[15px] flex items-center justify-center px-2">{cert.tagType}</p>
 
                 <p className="font-r-p-12 text-light-white"><strong className="font-b-p-12">Carga hóraria:</strong> Aulas Técnicas: {cert.subTitle}</p>
               </div>
 
-              <div className="flex gap-5">
-                <div className="w-[215px] h-[108px] rounded-[20px] bg-gray flex items-center justify-center cursor-pointer hover:opacity-65 transition-opacity" onClick={() => openZoom(cert.img_1)}>
-                  <Image className="w-[190px] h-[80px] border-4 border-cian rounded-[10px]" src={cert.img_1} alt={"Imagem 1 do certificado de " + cert.tagType} />
+              <div className="flex flex-wrap gap-3 sm:gap-5">
+                <div className="w-full sm:w-[215px] h-[108px] rounded-[20px] bg-gray flex items-center justify-center cursor-pointer hover:opacity-65 transition-opacity" onClick={() => openZoom(cert.img_1)}>
+                  <Image className="w-[calc(100%-24px)] max-w-[190px] h-[80px] object-contain border-4 border-cian rounded-[10px]" src={cert.img_1} alt={"Imagem 1 do certificado de " + cert.tagType} />
                 </div>
 
                 {cert.img_2 ? (
-                  <div className="w-[215px] h-[108px] rounded-[20px] bg-gray flex items-center justify-center cursor-pointer hover:opacity-65 transition-opacity" onClick={() => openZoom(cert.img_2!)}>
-                    <Image className="w-[190px] h-[80px] border-4 border-cian rounded-[10px]" src={cert.img_2} alt={"Imagem 2 do certificado de " + cert.tagType} />
+                  <div className="w-full sm:w-[215px] h-[108px] rounded-[20px] bg-gray flex items-center justify-center cursor-pointer hover:opacity-65 transition-opacity" onClick={() => openZoom(cert.img_2!)}>
+                    <Image className="w-[calc(100%-24px)] max-w-[190px] h-[80px] object-contain border-4 border-cian rounded-[10px]" src={cert.img_2} alt={"Imagem 2 do certificado de " + cert.tagType} />
                   </div>
                 ) : ('')}
               </div>
@@ -191,17 +191,17 @@ export default function Certifications() {
         </ul>
       </div>
 
-      <div className="w-full flex justify-end pr-16 -mt-[100px] mb-20">
-        <div className="w-[445px] h-[100px] flex flex-col items-center justify-between">
-          <p className="flex justify-center gap-1 items-center rounded-full bg-gray w-full h-[42px] font-b-h4-16 text-light-white"><span>Acompanhe</span> também em:</p>
+      <div className="w-full flex justify-center md:justify-end md:pr-16 mt-10 md:-mt-[100px] mb-10 md:mb-20">
+        <div className="w-full max-w-[445px] flex flex-col items-center justify-between gap-4">
+          <p className="flex justify-center gap-1 items-center rounded-full bg-gray w-full h-[42px] font-b-h4-16 text-light-white text-sm sm:text-base"><span>Acompanhe</span> também em:</p>
         
-          <div className="flex w-full items-center justify-between">
-            <Link target="_blank" className="flex items-center justify-center gap-2.5 rounded-full bg-cian font-b-h4-16 text-light-white w-[215px] h-[42px] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-cian" href={'https://www.linkedin.com/in/luciano-chiodini-6a35092b3'}>
+          <div className="flex flex-col sm:flex-row w-full items-center justify-between gap-3 sm:gap-0">
+            <Link target="_blank" className="flex items-center justify-center gap-2.5 rounded-full bg-cian font-b-h4-16 text-light-white w-full sm:w-[215px] h-[42px] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-cian" href={'https://www.linkedin.com/in/luciano-chiodini-6a35092b3'}>
               Ir para
               <Image src={iconLinkedin} alt=""/>
             </Link>
         
-            <Link target="_blank" className="flex items-center justify-center gap-2.5 rounded-full bg-cian font-b-h4-16 text-light-white w-[215px] h-[42px] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-cian" href={'https://github.com/yLucino'}>
+            <Link target="_blank" className="flex items-center justify-center gap-2.5 rounded-full bg-cian font-b-h4-16 text-light-white w-full sm:w-[215px] h-[42px] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-cian" href={'https://github.com/yLucino'}>
               Ir para
               <Image src={iconGithub} alt=""/>
             </Link>
@@ -209,8 +209,8 @@ export default function Certifications() {
         </div>
       </div>
 
-      <div className="absolute right-0 bottom-0">
-        <Image src={bg} alt=""/>         
+      <div className="absolute right-0 bottom-0 hidden lg:block pointer-events-none">
+        <Image className="max-w-[50vw] h-auto" src={bg} alt=""/>         
       </div>
 
       {/* Zoom Modal */}

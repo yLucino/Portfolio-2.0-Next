@@ -117,21 +117,21 @@ export default function Skills() {
   }, []);
 
   return (
-    <section id="skills" className="flex flex-col justify-center items-center w-full h-screen bg-dark-blue pt-32 px-32">
-      <div className="flex items-center justify-between mb-[64px] w-[1060px]">
-        <h1 className="text-light-white font-b-title-desktop-64 ">Minhas <span>habilidades</span></h1>
-        <Link href={'https://www.linkedin.com/in/luciano-chiodini-6a35092b3/details/education'} target="_blank" className="bg-gray flex justify-center items-center font-b-h4-16 text-cian rounded-full w-[121px] h-[46px] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-gray">Ver mais</Link>
+    <section id="skills" className="flex flex-col justify-center items-center w-full min-h-screen bg-dark-blue pt-24 sm:pt-28 md:pt-32 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 py-10 md:py-0">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 md:mb-[64px] w-full max-w-[1060px]">
+        <h1 className="text-light-white font-b-title-mobile-38 md:font-b-title-desktop-64">Minhas <span>habilidades</span></h1>
+        <Link href={'https://www.linkedin.com/in/luciano-chiodini-6a35092b3/details/education'} target="_blank" className="bg-gray flex justify-center items-center font-b-h4-16 text-cian rounded-full w-[121px] h-[46px] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-gray shrink-0">Ver mais</Link>
       </div>
 
-      <ul className="flex flex-wrap gap-5 w-[1060px]">
+      <ul className="flex flex-wrap justify-center sm:justify-start gap-3 sm:gap-4 md:gap-5 w-full max-w-[1060px]">
         {cards.map((card, i) => (
           <li
             key={card.name}
             ref={(el) => { cardRefs.current[i] = el; }}
-            className="size-[160px] rounded-2xl bg-dark-blue shadow-[5px_5px_9px_rgba(0,0,0,0.25)] flex flex-col items-center justify-center text-light-white font-b-h4-16 gap-2.5 transition-transform duration-300"
+            className="size-[120px] sm:size-[140px] md:size-[160px] rounded-2xl bg-dark-blue shadow-[5px_5px_9px_rgba(0,0,0,0.25)] flex flex-col items-center justify-center text-light-white font-b-s-10 sm:font-b-h4-16 gap-2 sm:gap-2.5 transition-transform duration-300"
           >
-            <div className="flex items-center justify-center size-[85px]">
-              <Image className="h-[85px]" src={card.imgUrl} alt={card.name} />
+            <div className="flex items-center justify-center size-[60px] sm:size-[75px] md:size-[85px]">
+              <Image className="h-[60px] sm:h-[75px] md:h-[85px] w-auto" src={card.imgUrl} alt={card.name} />
             </div>
             {card.name}
           </li>

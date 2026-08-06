@@ -190,18 +190,18 @@ export default function ProjectDetails() {
   }, [zoomedImage, closeZoom]);
 
   return (
-    <section className="flex flex-col w-full h-screen justify-evenly bg-dark-blue pt-32 px-32">
-      <h1 className="font-b-title-desktop-64 text-light-white">Detalhes do <span>Projeto</span></h1>
+    <section className="flex flex-col w-full min-h-screen justify-start md:justify-evenly gap-8 md:gap-6 bg-dark-blue pt-24 sm:pt-28 md:pt-32 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 pb-10 md:pb-0">
+      <h1 className="font-b-title-mobile-38 md:font-b-title-desktop-64 text-light-white">Detalhes do <span>Projeto</span></h1>
 
-      <div className="flex justify-between w-full">
-        <div className="flex flex-col gap-5 max-w-[360px]">
-          <p className="font-extralight text-light-white"><span className="font-b-h4-16">Nome:</span> {repo?.name}</p>
-          <p className="font-extralight text-light-white !leading-7"><span className="font-b-h4-16">Descrição:</span> {repo?.description || 'Sem Descrição'}</p>
+      <div className="flex flex-col lg:flex-row justify-between w-full gap-8 lg:gap-6">
+        <div className="flex flex-col gap-4 md:gap-5 w-full lg:max-w-[360px]">
+          <p className="font-extralight text-light-white text-sm md:text-base"><span className="font-b-h4-16">Nome:</span> {repo?.name}</p>
+          <p className="font-extralight text-light-white !leading-7 text-sm md:text-base"><span className="font-b-h4-16">Descrição:</span> {repo?.description || 'Sem Descrição'}</p>
         </div>
 
-        <div className="flex flex-col gap-5 max-w-[440px]">
+        <div className="flex flex-col gap-4 md:gap-5 w-full lg:max-w-[440px]">
           <div 
-            className="cursor-pointer hover:opacity-65 transition-opacity rounded-lg overflow-hidden bg-gray"
+            className="cursor-pointer hover:opacity-65 transition-opacity rounded-lg overflow-hidden bg-gray w-full"
             onClick={() => {
               const imgToZoom = failedImages.has('thumb') ? thumbNoImage : (images.thumb || thumbNoImage);
               openZoom(imgToZoom);
@@ -212,7 +212,7 @@ export default function ProjectDetails() {
               alt="Thumbnail do projeto" 
               width={440}
               height={260}
-              className="rounded-lg"
+              className="rounded-lg w-full h-auto"
               unoptimized
               onError={() => {
                 setFailedImages(prev => new Set(prev).add('thumb'));
@@ -220,7 +220,7 @@ export default function ProjectDetails() {
             />
           </div>
 
-          <div className="grid grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-5">
             <div 
               className="cursor-pointer hover:opacity-65 transition-opacity rounded-lg overflow-hidden bg-gray"
               onClick={() => {
@@ -233,7 +233,7 @@ export default function ProjectDetails() {
                 alt="Preview 01 do projeto" 
                 width={130}
                 height={90}
-                className="rounded-lg"
+                className="rounded-lg w-full h-auto"
                 unoptimized
                 onError={() => {
                   setFailedImages(prev => new Set(prev).add('preview01'));
@@ -252,7 +252,7 @@ export default function ProjectDetails() {
                 alt="Preview 02 do projeto" 
                 width={130}
                 height={90}
-                className="rounded-lg"
+                className="rounded-lg w-full h-auto"
                 unoptimized
                 onError={() => {
                   setFailedImages(prev => new Set(prev).add('preview02'));
@@ -271,7 +271,7 @@ export default function ProjectDetails() {
                 alt="Preview 03 do projeto" 
                 width={130}
                 height={90}
-                className="rounded-lg"
+                className="rounded-lg w-full h-auto"
                 unoptimized
                 onError={() => {
                   setFailedImages(prev => new Set(prev).add('preview03'));
@@ -290,7 +290,7 @@ export default function ProjectDetails() {
                 alt="Preview 04 do projeto" 
                 width={130}
                 height={90}
-                className="rounded-lg"
+                className="rounded-lg w-full h-auto"
                 unoptimized
                 onError={() => {
                   setFailedImages(prev => new Set(prev).add('preview04'));
@@ -301,11 +301,11 @@ export default function ProjectDetails() {
         </div>
       </div>
 
-      <div className="flex justify-between w-full">
-        <div className="bg-gray rounded-[20px] flex flex-col justify-between py-3 items-center w-[410px] h-[190px]">
-          <p className="font-r-h4-16 text-light-white"><span>Linguagens</span> utilizadas no projeto</p>
+      <div className="flex flex-col md:flex-row justify-between w-full gap-6 md:gap-4">
+        <div className="bg-gray rounded-[20px] flex flex-col justify-between py-3 items-center w-full md:w-[410px] min-h-[190px]">
+          <p className="font-r-h4-16 text-light-white text-sm md:text-base px-4 text-center"><span>Linguagens</span> utilizadas no projeto</p>
 
-          <ul className="bg-dark-blue rounded-[12px] flex flex-col justify-between py-3 items-center gap-auto w-[380px] h-[130px]">
+          <ul className="bg-dark-blue rounded-[12px] flex flex-col justify-between py-3 items-center gap-auto w-[calc(100%-24px)] md:w-[380px] min-h-[130px]">
             {loading ? (
               <li className="flex w-full px-3 gap-2 items-center justify-center">
                 <p className="font-r-p-12 text-light-white">Carregando...</p>
@@ -337,17 +337,17 @@ export default function ProjectDetails() {
           </ul>
         </div>
 
-        <div className="bg-gray rounded-[20px] flex flex-col justify-between py-3 items-center w-[410px] h-[190px]">
-          <p className="font-r-h4-16 text-light-white"><span>Ações</span> disponíveis</p>
+        <div className="bg-gray rounded-[20px] flex flex-col justify-between py-3 items-center w-full md:w-[410px] min-h-[190px]">
+          <p className="font-r-h4-16 text-light-white text-sm md:text-base px-4 text-center"><span>Ações</span> disponíveis</p>
 
-          <div className="bg-dark-blue rounded-[12px] flex flex-col justify-between py-3 px-3 items-center gap-auto w-[380px] h-[130px]">
-            <p className="font-r-p-12 text-light-white">Repositório GitHub: <span>Público</span></p>
-            <p className="font-r-p-12 text-light-white">Autor do Projeto: <span>yLucino</span></p>
+          <div className="bg-dark-blue rounded-[12px] flex flex-col justify-between py-3 px-3 items-center gap-auto w-[calc(100%-24px)] md:w-[380px] min-h-[130px]">
+            <p className="font-r-p-12 text-light-white text-center">Repositório GitHub: <span>Público</span></p>
+            <p className="font-r-p-12 text-light-white text-center">Autor do Projeto: <span>yLucino</span></p>
             <hr className="h-[2px] w-full border-none bg-gray rounded-full" />
 
-            <nav className="flex justify-between w-full">
+            <nav className="flex flex-wrap justify-center sm:justify-between w-full gap-2 sm:gap-0">
               <Link 
-                className="bg-cian font-b-s-10 text-light-white flex gap-2 justify-center items-center rounded-[5px] h-[35px] w-[110px] hover:opacity-65 transition-opacity" 
+                className="bg-cian font-b-s-10 text-light-white flex gap-2 justify-center items-center rounded-[5px] h-[35px] w-full sm:w-[110px] hover:opacity-65 transition-opacity" 
                 href={repo?.html_url || '#'} 
                 target="_blank"
                 rel="noopener noreferrer"
@@ -356,7 +356,7 @@ export default function ProjectDetails() {
                 <Image className="size-[15px]" src={iconGithub} alt="GitHub"/>
               </Link>
               <button 
-                className="bg-cian font-b-s-10 text-light-white flex gap-2 justify-center items-center rounded-[5px] h-[35px] w-[110px] hover:opacity-65 transition-opacity cursor-pointer disabled:opacity-50" 
+                className="bg-cian font-b-s-10 text-light-white flex gap-2 justify-center items-center rounded-[5px] h-[35px] w-full sm:w-[110px] hover:opacity-65 transition-opacity cursor-pointer disabled:opacity-50" 
                 onClick={handleCopyCloneUrl}
                 disabled={!repo?.clone_url}
                 title={copied ? "Copiado!" : "Copiar URL de clonagem"}
@@ -365,7 +365,7 @@ export default function ProjectDetails() {
                 <Image className="size-[15px]" src={iconCopy} alt="Copiar"/>
               </button>
               <button 
-                className="bg-cian font-b-s-10 text-light-white flex gap-2 justify-center items-center rounded-[5px] h-[35px] w-[110px] hover:opacity-65 transition-opacity cursor-pointer disabled:opacity-50" 
+                className="bg-cian font-b-s-10 text-light-white flex gap-2 justify-center items-center rounded-[5px] h-[35px] w-full sm:w-[110px] hover:opacity-65 transition-opacity cursor-pointer disabled:opacity-50" 
                 onClick={handleDownloadZip}
                 disabled={!repo?.default_branch || !repo?.full_name}
                 title="Baixar repositório como ZIP"

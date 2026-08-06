@@ -101,7 +101,7 @@ export default function Header() {
   }
 
   return (
-    <header className="w-full fixed flex justify-between items-center py-7 px-4 md:px-32 bg-blue-drak border-b-2 border-gray bg-dark-blue z-50">
+    <header className="w-full fixed flex justify-between items-center py-4 md:py-7 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 bg-blue-drak border-b-2 border-gray bg-dark-blue z-50">
       <div className="flex items-center gap-2">
         <Link href={'/'}>
           <Image className="md:size-16 size-[50px]" src={logo} alt="Logo YL" />
@@ -120,7 +120,7 @@ export default function Header() {
         </button>
 
         {/* Desktop Navigation */}
-        <ul className="md:flex hidden items-center gap-10 font-r-h4-16 ">
+        <ul className="md:flex hidden items-center gap-4 lg:gap-8 xl:gap-10 font-r-h4-16 text-sm lg:text-base">
           {pathname === '/certifications' || pathname?.split('/')[1] === 'project-details' ? (
             <li key={navLink.name} className={currentLink?.name === navLink.name ? 'text-cian' : 'text-light-white hover:text-cian transition-all duration-300'} onClick={() => handleClick(navLink)}>
               <Link href={navLink.href}>

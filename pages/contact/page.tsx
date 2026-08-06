@@ -32,22 +32,22 @@ export default function Contact() {
   ]
 
   return (
-    <section id="contact" className="w-full h-screen bg-dark-blue pt-32">
-      <h1 className="text-light-white font-b-title-desktop-64 px-32 mb-28">Quer entrar em <span>contato?</span></h1>
+    <section id="contact" className="w-full min-h-screen bg-dark-blue pt-24 sm:pt-28 md:pt-32 pb-10 md:pb-0">
+      <h1 className="text-light-white font-b-title-mobile-38 md:font-b-title-desktop-64 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 mb-10 md:mb-28">Quer entrar em <span>contato?</span></h1>
 
-      <ul className="flex flex-col gap-16">
+      <ul className="flex flex-col gap-8 md:gap-16 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32">
         {list.map(item => (
-          <li key={item.text} className="flex gap-12 items-center">
-            <div className="h-[114px] w-32 bg-gray rounded-tr-3xl rounded-br-3xl"></div>
+          <li key={item.text} className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-12 items-stretch sm:items-center">
+            <div className="hidden sm:block h-[80px] md:h-[114px] w-16 md:w-32 bg-gray rounded-tr-3xl rounded-br-3xl shrink-0"></div>
             
-            <Link href={item.url} title={item.title} target="_blank" className="hover:scale-105 transition-all duration-300">
-              <Image src={item.icon} alt={""}/>          
+            <Link href={item.url} title={item.title} target="_blank" className="hover:scale-105 transition-all duration-300 self-center sm:self-auto shrink-0">
+              <Image className="w-[60px] h-auto md:w-auto" src={item.icon} alt={""}/>          
             </Link>
             
-            <div className="flex justify-between items-center h-[114px] w-full bg-gray rounded-tl-3xl rounded-bl-3xl pl-10 pr-32">
-              <p className="text-light-white font-r-h4-16">{item.text} <span>{item.textContrast}</span></p>
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 min-h-[80px] md:h-[114px] w-full bg-gray rounded-3xl sm:rounded-tl-3xl sm:rounded-bl-3xl sm:rounded-tr-none sm:rounded-br-none px-6 sm:pl-6 md:pl-10 sm:pr-6 md:pr-16 py-4 sm:py-0">
+              <p className="text-light-white font-r-h4-16 text-center sm:text-left text-sm md:text-base">{item.text} <span>{item.textContrast}</span></p>
 
-              <Link href={item.url} title={item.title} target="_blank" className="flex justify-center items-center bg-cian rounded-2xl w-16 h-[46px] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-cian">
+              <Link href={item.url} title={item.title} target="_blank" className="flex justify-center items-center bg-cian rounded-2xl w-16 h-[46px] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-cian shrink-0">
                 <Image src={iconSend} alt="" />
               </Link>
             </div>

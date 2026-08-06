@@ -235,16 +235,16 @@ export default function Projects() {
   
 
   return (
-    <section id="projects" className="flex flex-col w-full h-screen justify-between bg-dark-blue pt-32">
-      <div className="flex w-full justify-between">
-        <Image src={bg_Left} alt="" />
+    <section id="projects" className="flex flex-col w-full min-h-screen justify-between bg-dark-blue pt-24 sm:pt-28 md:pt-32 gap-8 md:gap-0 pb-10 md:pb-0">
+      <div className="flex w-full justify-between items-start px-4 sm:px-8 md:px-0">
+        <Image className="hidden lg:block shrink-0" src={bg_Left} alt="" />
 
-        <div className="">
-          <h1 className="text-light-white font-b-title-desktop-64 mb-4">Meus <span>Projetos</span></h1>
+        <div className="w-full lg:w-auto flex flex-col items-center lg:items-start">
+          <h1 className="text-light-white font-b-title-mobile-38 md:font-b-title-desktop-64 mb-4 text-center lg:text-left">Meus <span>Projetos</span></h1>
 
-          <ul className="flex gap-3.5">
+          <ul className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3.5">
             {filters.map(btn => (
-              <li key={btn.text} className={currentBtn.text === btn.text ? "w-[207px] h-[43px] bg-cian rounded-full text-gray font-b-h4-16 flex justify-center items-center gap-3 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-cian" : "size-[43px] bg-gray rounded-full text-light-white flex justify-center items-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-gray"} onClick={() => handlerClick(btn.text)}>
+              <li key={btn.text} className={currentBtn.text === btn.text ? "min-w-[140px] sm:w-[207px] h-[43px] bg-cian rounded-full text-gray font-b-h4-16 flex justify-center items-center gap-2 sm:gap-3 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-cian px-3" : "size-[43px] bg-gray rounded-full text-light-white flex justify-center items-center cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-gray shrink-0"} onClick={() => handlerClick(btn.text)}>
                 {currentBtn.text === btn.text ? btn.text : ''}
                 <Image className="text-light-white" src={currentBtn.text === btn.text ? btn.iconGray : btn.iconWhite} alt={btn.text}/>
               </li>
@@ -252,18 +252,18 @@ export default function Projects() {
           </ul>
         </div>
 
-        <Image src={bg_Right} alt="" />
+        <Image className="hidden lg:block shrink-0" src={bg_Right} alt="" />
       </div>
 
-      <div className="flex w-full justify-center items-center">
-        <ul className="flex gap-6">
+      <div className="flex w-full justify-center items-center px-4 sm:px-8 md:px-16 lg:px-8">
+        <ul className="flex flex-col md:flex-row flex-wrap justify-center gap-4 sm:gap-6 w-full max-w-[1200px]">
           {loading ? (
-            <li className="bg-gray w-[380px] h-[280px] rounded-4xl flex items-center justify-center">
+            <li className="bg-gray w-full max-w-[380px] mx-auto h-[240px] sm:h-[280px] rounded-4xl flex items-center justify-center">
               <p className="text-light-white font-b-h4-16 bg-dark-blue px-5 py-3 rounded-full">Carregando...</p>
             </li>
           ) : filteredRepos.length > 0 ? (
             filteredRepos.map((repo) => (
-              <li key={repo.id} className="bg-gray w-[380px] h-[280px] rounded-4xl hover:scale-105 transition-all duration-300" title={repo.description || 'Sem descrição'}>
+              <li key={repo.id} className="bg-gray w-full max-w-[380px] mx-auto md:mx-0 md:flex-1 md:max-w-none lg:w-[380px] lg:flex-none h-[240px] sm:h-[280px] rounded-4xl hover:scale-105 transition-all duration-300" title={repo.description || 'Sem descrição'}>
                 <Link 
                   className="flex h-full flex-col justify-evenly items-center" 
                   href={`/project-details/${repo.name}`}
@@ -274,7 +274,7 @@ export default function Projects() {
                     </p>
                   </div>
 
-                  <div className="flex justify-center items-center bg-dark-blue w-[340px] h-[200px] rounded-2xl relative">
+                  <div className="flex justify-center items-center bg-dark-blue w-[calc(100%-40px)] sm:w-[340px] h-[160px] sm:h-[200px] rounded-2xl relative">
                     <Image src={getLanguageIcon(repo.language)} alt={repo.language || 'Unknown language'} />
                     <p className="absolute left-3 bottom-3 flex justify-center items-center min-w-[28px] h-7 px-2 rounded-full bg-cian font-b-s-8 text-light-white" title={`Project developed in: ${repo.language || 'Unknown'}`}>
                       {getLanguageLabel(repo.language)}
@@ -284,22 +284,22 @@ export default function Projects() {
               </li>
             ))
           ) : (
-            <li className="bg-gray w-[380px] h-[280px] rounded-4xl flex items-center justify-center">
+            <li className="bg-gray w-full max-w-[380px] mx-auto h-[240px] sm:h-[280px] rounded-4xl flex items-center justify-center">
               <p className="text-light-white font-b-h4-16 bg-dark-blue px-5 py-3 rounded-full">Nenhum repositório encontrado</p>
             </li>
           )}
         </ul>
       </div>
 
-      <div className="flex justify-center w-full gap-10">
-        <Image src={bg_ArrowLeft} alt="" />
+      <div className="flex justify-center w-full gap-4 sm:gap-10 px-4">
+        <Image className="hidden md:block" src={bg_ArrowLeft} alt="" />
 
-        <Link className="flex items-center justify-center gap-4 bg-cian rounded-full text-light-white font-b-h4-16 w-[207px] h-[43px] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-cian" href={'https://github.com/yLucino?tab=repositories'} target="_blank">
+        <Link className="flex items-center justify-center gap-4 bg-cian rounded-full text-light-white font-b-h4-16 w-full max-w-[207px] h-[43px] cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-cian" href={'https://github.com/yLucino?tab=repositories'} target="_blank">
           Ver todos
           <Image src={iconGithub} alt="" />
         </Link>
 
-        <Image src={bg_ArrowRight} alt="" />
+        <Image className="hidden md:block" src={bg_ArrowRight} alt="" />
       </div>
     </section>
   )
